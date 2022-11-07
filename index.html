@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="weather-box">
+            <div class="weather-top">
+                <form id="search-form" class="mb-3">
+                    <div class="row">
+                        <div class="col-9 srch">
+                            <input type="search" placeholder="Type a city.." class="form-control" id="city-input"
+                                autocomplete="off" />
+                        </div>
+                        <div class="col-3 submit">
+                            <input type="submit" value="Search" class="btn btn-primary w-100" />
+                        </div>
+                    </div>
+                </form>
+
+                <div class="row">
+                    <div class="col-6">
+                        <h2 id="city"></h2>
+                        <p class="update">Last updated: <span id="date">Tuesday 20, 2022</span></p>
+
+                    </div>
+
+
+                    <div class="col-3 climate">
+                        <P class="weather-condition">Feels-like</P>
+                        <span id="feels_like"></span><span class="units">⁰C</span>
+
+                    </div>
+                    <div class="col-3 climate">
+                        <p class="weather-condition">Wind</p>
+                        <span id="wind"></span><span class="units">mph</span>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-6 weather-temperature">
+                        <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+                            alt="Clear" id="icon" class="weather-icon" />
+                        <strong class="temperature" id="temperature"></strong><span class="units"><a href="#"
+                                id="celsius-link" class="active">°C</a> |
+                            <a href="#" id="fahrenheit-link">°F</a></span>
+                        <p id="description" class="description">Clear sky</p>
+                    </div>
+
+                    <div class="col-3 climate">
+                        <P class="weather-condition">Pressure</P>
+                        <span id="pressure"></span><span class="units">N/m<sup>2</sup></span>
+                    </div>
+                    <div class="col-3 climate">
+                        <P class="weather-condition">Humidity</P>
+                        <span id="humidity"></span>
+                        <span class="units">%</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <h4>Next 6 Days</h4>
+        <div class="weather-forecast" id="forecast">
+        </div>
+        <small><a href="https://github.com/Rozymacassy/my-weather-app" target="_blank">
+                Open-source code
+            </a>
+            by Nwachukwu Chinenye Rosemary
+        </small>
+    </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
