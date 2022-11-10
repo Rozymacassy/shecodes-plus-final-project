@@ -2,13 +2,9 @@ body{
     background-color: black;
 
 }
-/* .weather-box{
-    margin: 30px;
-} */
+
 .container {
     background-color: rgba(229, 204, 253, 0.747);
-    /* background-image: url(flower-bg.jpg); */
-    /* opacity: 0.6; */
     margin-top: 20px;
     border-radius: 20px;
     padding: 20px;
@@ -34,7 +30,7 @@ font-weight: 500;
 
 }
 
-.day-weather{
+/* .day-weather{
     text-align: center;
 }
 
@@ -48,4 +44,12 @@ font-weight: 500;
 .weather-forecast-day{
     font-size:16px ;
     opacity: 0.5;
+} */
+.weather-temperature .active{
+    color: black;
+    cursor: default;
+}
+
+.weather-temperature .active:hover{
+    text-decoration: none;
 }
