@@ -79,54 +79,6 @@ console.log(response);
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-// function forecastDate(timestamp) {
-//   let date = new Date(timestamp * 1000);
-//   let day = date.getDay();
-//   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-//   return days[day];
-// }
-
-// function displayForecast(response) {
-//   let forecast = response.data.daily;
-//   let forecastElement = document.querySelector("#forecast");    
-//   let forecastHTML = `<div class="row">`;
-
-//   forecast.forEach((forecastDay, index) => {
-//     if (index < 6) {
-//       forecastHTML =
-//         forecastHTML +
-//         ` 
-//                 <div class="col-2">
-//                 <div class="weather-forecast-date">${forecastDate(
-//                   forecastDay.time
-//                 )}</div>
-//                 <img
-//                   src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
-//                     forecastDay.condition.icon
-//                   }.png"
-
-//                   alt=""
-//                   width="42"
-//                 />
-
-//                 <div class="weather-forecast-temps">
-//                   <span class="weather-forecast-temp-max">${Math.round(
-//                     forecastDay.temperature.maximum
-//                   )}°</span>
-//                   <span class="weather-forecast-temp-min">${Math.round(
-//                     forecastDay.temperature.minimum
-//                   )}°</span> 
-//                 </div>
-//               </div>
-
-//     `;
-//     }
-//   });
-
-//   forecastHTML = forecastHTML + `</div> `;
-//   forecastElement.innerHTML = forecastHTML;
-// }
 
 function getForecast(coordinates) {
   let apiKey = "40838fb0aebe5a563a3bc60cbb4foaat"
@@ -148,8 +100,6 @@ function displayTemperature(response) {
   let currentTime = new Date();
 
   celsiusTemperature = response.data.temperature.current;
-
-  // celsiusTemperature = response.data.main.temp;
   pressure.innerHTML = Math.round(response.data.temperature.pressure);
   feels.innerHTML = Math.round(response.data.temperature.feels_like);
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
@@ -199,8 +149,9 @@ function displayFahrenheitTemperature(event) {
   event.preventDefault();
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function displayCelsiusTemperature(event) {
